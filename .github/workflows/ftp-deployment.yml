@@ -1,5 +1,8 @@
-on: push
 name: 🚀 FTP-Deployment
+on: 
+  push:
+    branches:
+      - 'main'
 jobs:
   web-deploy:
     name: 🎉 Deploy
@@ -14,4 +17,5 @@ jobs:
         server: dev.kunden.daniel-hoover.de
         username: ${{ secrets.ftp_user }}
         password: ${{ secrets.ftp_password }}
-        server-dir: html/brandecker
+        server-dir: html/brandecker/
+        protocol: ftps
